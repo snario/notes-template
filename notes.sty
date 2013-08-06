@@ -1,0 +1,195 @@
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.0in,bmargin=1.0in,lmargin=0.5in,rmargin=0.5in}
+\usepackage{url}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{makeidx}
+\usepackage{microtype}
+\makeindex
+\usepackage{graphicx}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\noun}[1]{\textsc{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% Necessary Packages
+
+\usepackage{babel} %Allow labeling of TOC
+\usepackage{fancyhdr}
+\usepackage{cmbright}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm} 
+\usepackage{url} 
+\usepackage{enumerate} 
+\usepackage{tikz} 
+\usepackage{listings}
+\pagestyle{fancy}
+
+% For Bibliography
+
+\usepackage{apacite} % Order here is important!
+\usepackage{natbib}
+
+% Special Setups
+
+\usepackage{caption}
+\captionsetup{labelfont=bf,indention=0cm}
+\usepackage{hyperref}
+\hypersetup{
+colorlinks,
+citecolor=blue,
+filecolor=blue,
+linkcolor=blue,
+urlcolor=purple
+}
+
+% Tweaks
+
+\geometry{letterpaper}
+\renewcommand{\ps@plain}{\pagestyle{fancy}}
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+\makeatother
+
+\usepackage{babel}
+
+%%%%% TITLE %%%%%
+\newcommand{\notefront}{
+\pagenumbering{roman}
+\begin{center}
+  \textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par} 
+
+  \textbf{\large{\noun{\thiscoursename}}}\\ \vspace{0.1in}
+
+  \includegraphics[scale=0.1]{shield.png} \\
+  \thisprof \ $\bullet$ \ \thisterm \ $\bullet$ \ University of Waterloo \\
+  Written by \me \\
+  \textbf{}Last Revision: \today\\
+  \url{lihorne.github.io}
+\end{center}
+}
+
+\newcommand{\tocandfigures}{
+  \rule[0.5ex]{1\columnwidth}{1pt}
+  \noindent \begin{flushleft}
+  \makeatletter 
+  \makeatother
+  \setcounter{page}{1}
+  \setcounter{secnumdepth}{0} %Hide section number in header
+  \par\end{flushleft}
+  \noindent \begin{flushleft}
+  \tableofcontents{}
+  \par\end{flushleft}
+  \noindent \begin{flushleft}
+  \rule[0.5ex]{1\columnwidth}{1pt}
+  \par\end{flushleft}
+  \listoffigures
+  \noindent \begin{flushleft}
+  \rule[0.5ex]{1\columnwidth}{1pt}
+  \par\end{flushleft}
+  \noindent \begin{flushleft}
+  \newpage{}
+  \par\end{flushleft}
+}
+
+\newcommand{\doabstract}[1]{
+  \sectionmark{Abstract}
+  \begin{abstract}
+  \noindent
+  #1
+  \end{abstract}
+  \setcounter{secnumdepth}{2}
+  \setcounter{page}{2}
+  \pagenumbering{arabic}
+}
+
+\newcommand{\f}[2]{\frac{#1}{#2}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\N}{{\mathbb{N}}}
+\newcommand{\wC}{{\textit{C}}}
+\newcommand{\n}{\vskip 6pt \noindent}
+\newcommand{\e}{\epsilon}
+\newcommand{\notdv}{\thinspace \not | \thickspace}
+\newcommand{\union}{\cup}
+\newcommand{\inter}{\cap}
+\newcommand{\into}{\rightarrow}
+\newcommand{\nset}[1]{#1_1,\ldots,#1_n}
+\newcommand{\setk}[2]{#1_1,\ldots,#1_#2}
+\newcommand{\bnset}[1]{\{#1_1,\ldots,#1_n\}}
+\newcommand{\bset}[2]{\{#1_1,\ldots,#1_#2\}}
+\newcommand{\ton}[1]{#1=1,\ldots,n}
+\newcommand{\tok}[2]{#1=1,\ldots,#2}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\spn}{\operatorname{Span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\proj}{\operatorname{proj}}
+\newcommand{\prp}{\operatorname{perp}}
+\newcommand{\ux}{\underline{x}}
+\newcommand{\ua}{\underline{a}}
+\newcommand{\uu}{\underline{u}}
+\newcommand{\pfx}{\frac{\partial f}{\partial x}}
+\newcommand{\pfy}{\frac{\partial f}{\partial y}}
+\newcommand{\px}{\frac{\partial}{\partial x}}
+\newcommand{\pxn}[1]{\frac{\partial f}{\partial x_{#1}}}
+\newcommand{\py}{\frac{\partial}{\partial y}}
+\newcommand{\jacu}{\frac{\partial(u,v)}{\partial(x,y)}}
+\newcommand{\jacx}{\frac{\partial(x,y)}{\partial(u,v)}}
+\newcommand{\vzero}{\vec{0}}
+\newcommand{\va}{\vec{a}}
+\newcommand{\vb}{\vec{b}}
+\newcommand{\vc}{\vec{c}}
+\newcommand{\vd}{\vec{d}}
+\newcommand{\ve}{\vec{e}}
+\newcommand{\vh}{\vec{h}}
+\newcommand{\vn}{\vec{n}}
+\newcommand{\vs}{\vec{s}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{{\vec{v}}}
+\newcommand{\vw}{\vec{w}}
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{thrm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{lem}[thrm]{Lemma}
+\newtheorem{prop}[thrm]{Proposition}
+\newtheorem{exmp}{Example}[section]
+\newtheorem*{rem}{Remark}
+\newtheorem*{note}{Note}
+
+\usepackage{color}
+\usepackage{listings}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+  \definecolor{ivory}{rgb}{1.000000,1.000000,0.941176}
+
+\lstset{
+    language=java,
+    basicstyle=\sffamily\small,
+    breaklines=true,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    keywordstyle=\color{black}\bfseries,
+    stringstyle=\color{green!50!black},
+    commentstyle=\color{gray}\itshape,
+    numbers=left,
+    captionpos=t,
+    backgroundcolor=\color{white},
+    escapeinside={\%*}{*)}
+}
