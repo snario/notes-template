@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{makeidx}
 \usepackage{microtype}
+\usepackage{setspace}
 \makeindex
 \usepackage{graphicx}
 \PassOptionsToPackage{normalem}{ulem}
@@ -26,19 +27,15 @@
 
 \usepackage{babel} %Allow labeling of TOC
 \usepackage{fancyhdr}
-\usepackage{cmbright}
+%\usepackage{cmbright}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm} 
-\usepackage{url} 
-\usepackage{enumerate} 
-\usepackage{tikz} 
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{url}
+\usepackage{enumerate}
+\usepackage{tikz}
 \usepackage{listings}
 \pagestyle{fancy}
 
-% For Bibliography
-
-\usepackage{apacite} % Order here is important!
-\usepackage{natbib}
 
 % Special Setups
 
@@ -50,39 +47,24 @@ colorlinks,
 citecolor=blue,
 filecolor=blue,
 linkcolor=blue,
-urlcolor=purple
+urlcolor=black
 }
 
-% Tweaks
+\renewcommand{\baselinestretch}{0.9}
 
+% Tweaks
 \geometry{letterpaper}
 \renewcommand{\ps@plain}{\pagestyle{fancy}}
 \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
 
 \makeatother
-
 \usepackage{babel}
-
-%%%%% TITLE %%%%%
-\newcommand{\notefront}{
-\pagenumbering{roman}
-\begin{center}
-  \textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par} 
-
-  \textbf{\large{\noun{\thiscoursename}}}\\ \vspace{0.1in}
-
-  \includegraphics[scale=0.1]{shield.png} \\
-  \thisprof \ $\bullet$ \ \thisterm \ $\bullet$ \ University of Waterloo \\
-  Written by \me \\
-  \textbf{}Last Revision: \today\\
-  \url{lihorne.github.io}
-\end{center}
-}
 
 \newcommand{\tocandfigures}{
   \rule[0.5ex]{1\columnwidth}{1pt}
+  Last Revision: \today
   \noindent \begin{flushleft}
-  \makeatletter 
+  \makeatletter
   \makeatother
   \setcounter{page}{1}
   \setcounter{secnumdepth}{0} %Hide section number in header
@@ -170,6 +152,7 @@ urlcolor=purple
 \newtheorem{exmp}{Example}[section]
 \newtheorem*{rem}{Remark}
 \newtheorem*{note}{Note}
+\newtheorem{notation}{Notation}[section]
 
 \usepackage{color}
 \usepackage{listings}
@@ -178,14 +161,14 @@ urlcolor=purple
 
 \lstset{
     language=java,
-    basicstyle=\sffamily\small,
+    basicstyle=\ttfamily\small,
     breaklines=true,
     prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
     frame=none,
     showtabs=false,
     showspaces=false,
     showstringspaces=false,
-    keywordstyle=\color{black}\bfseries,
+    keywordstyle=\color{blue}\bfseries,
     stringstyle=\color{green!50!black},
     commentstyle=\color{gray}\itshape,
     numbers=left,
