@@ -1,17 +1,37 @@
-\documentclass[english, 12pt]{article}
+\documentclass[english, 11pt]{article}
 \usepackage{notes}
-\renewcommand{\sfdefault}{cmss}
-\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\sfdefault}{cmss}
+%\renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\thiscoursecode}{[XXXX] (\#\#\#)}
-\newcommand{\thiscoursename}{Lorem Ipsum (Advanced Level)}
-\newcommand{\thisprof}{Dr. Amazing Professor}
-\newcommand{\me}{Firstname Lastname}
-\newcommand{\thisterm}{[Season] 20XX}
+\newcommand{\thiscoursename}{Course Name}
+\newcommand{\thisprof}{Dr. Great Professor}
+\newcommand{\me}{Liam Horne}
+\newcommand{\thisterm}{(Season) 20XX}
+\newcommand{\website}{MYWEBSITE.COM}
 
 % Headers
 \chead{\thiscoursename \ Course Notes}
 \lhead{\thisterm}
+
+
+%%%%% TITLE %%%%%
+\newcommand{\notefront} {
+\pagenumbering{roman}
+\begin{center}
+
+{\ttfamily \url{\website}} {\small}
+
+\textbf{\Huge{\noun{\thiscoursecode}}}{\Huge \par}
+
+{\large{\noun{\thiscoursename}}}\\ \vspace{0.1in}
+
+  %\includegraphics[scale=0.1]{shield.png} \\
+  {\noun \thisprof} \ $\bullet$ \ {\noun \thisterm} \ $\bullet$ \ {\noun {University of Waterloo}} \\
+
+  \end{center}
+  }
+
 % Begin Document
 \begin{document}
 
@@ -21,20 +41,18 @@
   \tocandfigures
   % Abstract
   \doabstract{These notes are intended as a resource for myself; past, present, or future students of this course, and anyone interested in the material. The goal is to provide an end-to-end resource that covers all material discussed in the course displayed in an organized manner. If you spot any errors or would like to contribute, please contact me directly.}
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  % Write your notes here
+
+  \section{Euclidean $n$-space}
+  In this section, we will review the algebra of vectors and the structure of the Euclidean $n$-space, $\R^n$. \\ \\
+  \textbf{Course overview}
+  \begin{itemize}
+  \item Sequences, limits, continuity in $\R^n$
+  \item Sets and topology of Rn (open, closed, compact, etc.)
+  \item Derivatives (requires a good grasp of linear algebra)
+  \item Multivariable integrals
+  \item Connections between derivatives and integrals
+  \end{itemize}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \newpage{}
-  \bibliographystyle{apacann}
-  \nocite{*}
-  \bibliography{ss_resources}
-  \fancyfoot[C]{}
-  \addcontentsline{toc}{section}{References}
-  \newpage{}
-  \printindex{}
-  \fancyfoot[C]{}
-  \sectionmark{index}
-  \addcontentsline{toc}{section}{Index}
-\end{document}
+  \end{document}
