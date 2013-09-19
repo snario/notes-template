@@ -3,7 +3,7 @@
 \usepackage{geometry}
 \usepackage{url}
 \usepackage{amsthm}
-\usepackage{amsmath}
+\usepackage{mathrsfs}
 \usepackage{makeidx}
 \usepackage{microtype}
 \usepackage{setspace}
@@ -12,12 +12,19 @@
 \usepackage{babel}
 \usepackage{fancyhdr}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amssymb}
 \usepackage{url}
 \usepackage{enumerate}
 \usepackage{tikz}
 \usepackage{listings}
-
+\usepackage{thmtools}
+\usepackage{
+nameref,%\nameref
+hyperref,%\autoref
+% n.b. \Autoref is defined by thmtools
+cleveref,% \cref
+% n.b. cleveref after! hyperref
+}
 \geometry{verbose,tmargin=1.0in,bmargin=1.0in,lmargin=0.5in,rmargin=0.5in}
 \pagestyle{fancy}
 \PassOptionsToPackage{normalem}{ulem}
@@ -73,7 +80,9 @@ Last Revision: \today
 \newpage{}
 \par\end{flushleft}
 }
-
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\ubt}[2]{$\underbrace{\mbox{#1}}_{\mbox{#2}}$}
+\newcommand{\comb}[2]{{#1 \choose #2}}
 \newcommand{\doabstract}[1]{
 \sectionmark{Abstract}
 \begin{abstract}
@@ -84,6 +93,12 @@ Last Revision: \today
 \setcounter{page}{2}
 \pagenumbering{arabic}
 }
+
+\newcommand{\piecewise}[4]{\left\{
+     \begin{array}{lr}
+       #1 & \mbox{#2} \\ #3 & \mbox{#4}
+     \end{array}
+   \right.}
 
 \newcommand{\sip}[2]{\langle #1 , #2 \rangle}
 
@@ -137,15 +152,41 @@ Last Revision: \today
 \newcommand{\vy}{\vec{y}}
 \newcommand{\vz}{\vec{z}}
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}
-\newtheorem{thrm}{Theorem}[section]
 \newtheorem{cor}{Corollary}[section]
-\newtheorem{lem}[thrm]{Lemma}
-\newtheorem{prop}[thrm]{Proposition}
-\newtheorem{exmp}{Example}[section]
-\newtheorem{rem}{Remark}[section]
 \newtheorem*{note}{Note}
 \newtheorem{notation}{Notation}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newtheorem*{solution}{Solution}
+ \newcommand{\Lp}{\mathcal{L}^p}
+\declaretheorem[name=Theorem,
+refname={theorem,theorems},
+Refname={Theorem,Theorems},
+numberwithin=section]{thrm}
+
+\declaretheorem[name=Lemma,
+refname={lemma,lemmas},
+Refname={Lemma,Lemmas},
+numberwithin=section]{lem}
+
+\declaretheorem[name=Example,
+refname={example,examples},
+Refname={Example,Example},
+numberwithin=section]{exmp}
+
+\declaretheorem[name=Remark,
+refname={remark,remarks},
+Refname={Remark,Remarks},
+numberwithin=section]{rem}
+
+\declaretheorem[name=Proposition,
+refname={proposition,propositions},
+Refname={Proposition,Propositions},
+numberwithin=section]{prop}
+
+\declaretheorem[name=Definition,
+refname={definition,definitions},
+Refname={Definition,Definitions},
+numberwithin=section]{defn}
 
 \usepackage{color}
 \usepackage{listings}
@@ -170,3 +211,4 @@ backgroundcolor=\color{white},
 escapeinside={\%*}{*)}
 }
 \setlength\parindent{0pt}
+
