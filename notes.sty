@@ -1,3 +1,6 @@
+%    These are the general settings for my Notes Template
+%    > I haven't organized them terribly much yet, however plan to soon.
+
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage{geometry}
@@ -51,6 +54,7 @@ linkcolor=blue,
 urlcolor=black
 }
 
+\newcommand{\tc}[1]{\texttt{#1}}
 \renewcommand{\baselinestretch}{1}
 
 % Tweaks
@@ -194,7 +198,7 @@ numberwithin=section]{defn}
 \definecolor{ivory}{rgb}{1.000000,1.000000,0.941176}
 
 \lstset{
-language=java,
+language=c++,
 basicstyle=\ttfamily\small,
 breaklines=true,
 prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
@@ -202,6 +206,7 @@ frame=none,
 showtabs=false,
 showspaces=false,
 showstringspaces=false,
+morecomment=[l][\color{magenta}]{\#},
 keywordstyle=\color{blue}\bfseries,
 stringstyle=\color{green!50!black},
 commentstyle=\color{gray}\itshape,
@@ -211,4 +216,3 @@ backgroundcolor=\color{white},
 escapeinside={\%*}{*)}
 }
 \setlength\parindent{0pt}
-

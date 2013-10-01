@@ -44,17 +44,32 @@
   % Abstract
   \doabstract{These notes are intended as a resource for myself; past, present, or future students of this course, and anyone interested in the material. The goal is to provide an end-to-end resource that covers all material discussed in the course displayed in an organized manner. If you spot any errors or would like to contribute, please contact me directly.}
 
-
   \section{Euclidean $n$-space}
-  In this section, we will review the algebra of vectors and the structure of the Euclidean $n$-space, $\R^n$. \\ \\
-  \textbf{Course overview}
+
   \begin{itemize}
-  \item Sequences, limits, continuity in $\R^n$
-  \item Sets and topology of $\R^n$ (open, closed, compact, etc.)
-  \item Derivatives (requires a good grasp of linear algebra)
-  \item Multivariable integrals
-  \item Connections between derivatives and integrals
+    \item Example items
+    \item More examples
   \end{itemize}
+
+  \[ e^{i\pi} + 1 = 0 \]
+
+  \begin{align*}
+    3 & = 1 + 2 \\
+      & = 1 + 1 + 1
+  \end{align*}
+
+  \begin{defn}[addition]\label{addition}
+   Two {\bf addition} operation adds two numbers, for $a, b \in \R$, their sum is
+   \[ a + b \]
+  \end{defn}
+
+  The \nameref{addition} rule is very good.
+
+  \begin{lstlisting}[language=lisp]
+  (define sum (lambda args (foldr + 0 args)))
+  \end{lstlisting}
+
+  \tc{this is code}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \end{document}
